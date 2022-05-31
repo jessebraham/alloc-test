@@ -8,7 +8,6 @@ extern crate alloc;
 use core::fmt::Write;
 
 use esp32_hal::{pac::Peripherals, prelude::*, RtcCntl, Serial, Timer};
-use panic_halt as _;
 use xtensa_lx_rt::entry;
 
 #[global_allocator]
@@ -50,5 +49,10 @@ fn main() -> ! {
     v.push(5);
     writeln!(serial0, "Vector elements: {:?}", v).ok();
 
+    loop {}
+}
+
+#[panic_handler]
+fn panic(_arg: &core::panic::PanicInfo) -> ! {
     loop {}
 }
