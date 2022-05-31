@@ -6,7 +6,7 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-esp-alloc   = { path = "/Users/jesse/Work/esp-alloc" }
+esp-alloc   = { git = "https://github.com/jessebraham/esp-alloc", branch = "feature/linked-list-allocator" }
 esp32c3-hal = { package = "esp32c3-hal", git = "https://github.com/esp-rs/esp-hal.git" }
 panic-halt  = "0.2"
 riscv-rt    = { version = "0.8", optional = true }
